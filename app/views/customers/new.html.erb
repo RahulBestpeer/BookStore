@@ -15,7 +15,7 @@
     <label for="first_name" class="form-label">First Name</label>
     <input type="text" class="form-control" name="first_name" id="first_name" required>
      <div class="form-text">
-     	<%@customer.errors.full_messages_for(:first_name).each do |i|%>
+     	<% @customer.errors.full_messages_for(:first_name).each do |i|%>
      		<div><%=i%></div>
      	<%end%>
      </div>

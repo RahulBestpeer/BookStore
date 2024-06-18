@@ -14,15 +14,16 @@ class CustomersController < ApplicationController
 	end
 
 	def new
-	
+		@customer = Customer.new
 	end
 	def create
-		# debugger
+		
 		@customer = Customer.new(customer_param)
 
 		if @customer.save
 			redirect_to :action=>'index'
 		else	
+			# debugger
 			render :new, status: :unprocessable_entity
 		end
 
