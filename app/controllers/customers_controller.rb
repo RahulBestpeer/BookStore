@@ -1,7 +1,10 @@
 class CustomersController < ApplicationController
 	
 	def index
+		if session[:customer_id] != nil
 		@customer = Customer.find(session[:customer_id])
+
+		end
 	end
 
 	def login
@@ -48,6 +51,9 @@ class CustomersController < ApplicationController
 
 	end
 
+	def customers_details
+
+	end
 
 	private
 	def customer_param

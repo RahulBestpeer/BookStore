@@ -9,7 +9,7 @@
 <body style="background: darkolivegreen;">
   <% message = session[:message] 
     if message != nil
-     # debugger
+     
 
   %>
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -22,7 +22,7 @@
   
  <!-- <img src="./login.png" class="card-img-top" alt="..."> -->
   <div class="card-body center">
-   <form action="/customers/customerLogin" method="post" >
+   <form action="/admins/adminLogin" method="post" >
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input type="email" class="form-control" name="email" id="email" required>
@@ -34,8 +34,7 @@
   
   <button type="submit" class="btn btn-primary " style="margin-left: 10rem">Submit</button><br>
 
-  <a href="#" class="" style="margin-top: 10px;">Forgate Password</a><br>
-  <a href="/customers/new" class="" style="margin-top:10px; ">Sign Up</a>
+ 
 </form>
   </div>
 </div>

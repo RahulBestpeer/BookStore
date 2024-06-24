@@ -1,4 +1,13 @@
 class Customer < ApplicationRecord
+	has_many :orders
+
+
+
+
+
+
+
+
 	validates :first_name, presence:true, format: { with: /\A[a-zA-Z]+\z/,
 		message: "only allows letters" }
 
