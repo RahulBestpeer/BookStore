@@ -20,16 +20,16 @@
           <a class="nav-link active" aria-current="page" href="/customers">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Make Order</a>
+          <a class="nav-link" href="#">View All Order</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="#">View Reviews</a>
+          <a class="nav-link" href="#">View Accounts</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="#">Your Order</a>
+          <a class="nav-link" href="/admins/new">Add Book</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Your Reviews</a>
+          <a class="nav-link" href="#">View Reviews</a>
         </li>
        
       </ul>
@@ -38,25 +38,17 @@
           <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              <%= image_tag "boy.png", {style:'height:44px;width:45px;'}%> 
           </a>
-          <% if @customer != nil %>
+         
           <ul class="dropdown-menu" style= "left: -195px;" aria-labelledby="navbarDropdown">
            
-            <li><span class="dropdown-item" >Name : <%= @customer.first_name %></span></li>
-            <li><span class="dropdown-item" >Email : <%=@customer.email%></span></li>
+            <li><span class="dropdown-item" >Name : <%=  %></span></li>
+            <li><span class="dropdown-item" >Email : <%=%></span></li>
             
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/customers/customers_details">Account Details</a></li>
             <li><a class="dropdown-item" href="/" onclick="function(){<%session.delete(:customer)%>}">Log Out</a></li>
           </ul>
-          <%else%>
-             <ul class="dropdown-menu" style= "left: -135px;" aria-labelledby="navbarDropdown">
-           
-            <li><a class="dropdown-item" href="/admins/login">Admin Login</a></li>
-            <li><a class="dropdown-item" href="/customers/login">Customer Login</a></li>
-            
-           
-          </ul>
-          <%end%>
+         
         </div>
         
       </div>

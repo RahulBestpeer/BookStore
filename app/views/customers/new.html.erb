@@ -23,28 +23,53 @@
   <div class="mb-3">
     <label for="last_name" class="form-label">Last Name</label>
     <input type="text" class="form-control" name="last_name" id="last_name" required>
+    <div class="form-text">
+      <% @customer.errors.full_messages_for(:last_name).each do |i|%>
+        <div><%=i%></div>
+      <%end%>
+     </div>
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input type="email" class="form-control" name="email" id="email" required>
+    <div class="form-text">
+      <% @customer.errors.full_messages_for(:email).each do |i|%>
+        <div><%=i%></div>
+      <%end%>
+     </div>
   </div>
   <div class="mb-3">
     <label for="phone" class="form-label">Phone Number</label>
     <input type="number" class="form-control" name="phone" id="phone" required>
+    <div class="form-text">
+      <% @customer.errors.full_messages_for(:phone).each do |i|%>
+        <div><%=i%></div>
+      <%end%>
+     </div>
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
     <input type="password" class="form-control" name="password" id="password" required>
+    <div class="form-text">
+      <% @customer.errors.full_messages_for(:password).each do |i|%>
+        <div><%=i%></div>
+      <%end%>
+     </div>
   </div>
   <div class="mb-3">
   <label for="address" class="form-label">Address</label>
   <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+  <div class="form-text">
+      <% @customer.errors.full_messages_for(:address).each do |i|%>
+        <div><%=i%></div>
+      <%end%>
+     </div>
 </div>
   
   <button type="submit" class="btn btn-primary " style="margin-left: 10rem">Submit</button><br>
 
-  <a href="#" class="" style="margin-top: 10px;">Forgate Password</a><br>
-  <a href="/customers/new" class="" style="margin-top:10px; ">Sign Up</a>
+  <a href="#"  style="margin-top: 10px;">Forgate Password</a><br>
+  <a href="/"  style="margin-top:10px; ">Sign in</a>
 </form>
   </div>
 </div>
