@@ -1,0 +1,280 @@
+<%= render "admins/nav" %>
+
+<% if flash[:message] != nil %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Message!</strong> <%= flash[:message] %></strong>
+  <button type="button" onclick="function(){<%flash.delete(:message)%>}" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<%end%>
+
+<div class="row ">
+
+ <div class="col-sm dropdown">
+
+   <a class="dropdown-toggle btn btn-primary" href="#" id="addAuthor" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Add Author
+  </a>
+
+
+
+  <div class="dropdown-menu" style= "" aria-labelledby="addAuthor">
+
+    <div class="dropdown-item" >
+
+
+      <div class="card" style="width: 28rem;margin:auto;background: lightblue;margin-top: 1%;">
+       <!-- <img src="./login.png" class="card-img-top" alt="..."> -->
+       <div class="card-body center">
+         <form action="/authors" method="post" >
+          <div class="mb-3">
+            <label for="name" class="form-label">Author Name</label>
+            <input type="text" class="form-control" name="name" id="name" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:title).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+          
+
+
+          <button type="submit" class="btn btn-primary " style="margin-left: 10rem">Submit</button><br>
+
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+<!-- second column .......................................................................... -->
+
+<div class="col-sm dropdown">
+
+   <a class="dropdown-toggle btn btn-primary" href="#" id="addsuplier" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Add Suplier
+  </a>
+
+
+
+  <div class="dropdown-menu" style= "" aria-labelledby="addsuplier">
+
+    <div class="dropdown-item" >
+
+
+      <div class="card" style="width: 28rem;margin:auto;background: lightblue;margin-top: 1%;">
+       <!-- <img src="./login.png" class="card-img-top" alt="..."> -->
+       <div class="card-body center">
+         <form action="/suppliers" method="post" >
+          <div class="mb-3">
+            <label for="name" class="form-label">Supplier Name</label>
+            <input type="text" class="form-control" name="name" id="name" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:name).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:email).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="number" class="form-label">Number</label>
+            <input type="number" class="form-control" name="number" id="number" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:number).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary " style="margin-left: 10rem">Submit</button><br>
+
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+<!-- third button of dropdown ,...........................................-->
+
+<div class="col-sm dropdown">
+
+   <a class="dropdown-toggle btn btn-primary" href="#" id="addbook" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Add Book
+  </a>
+
+
+
+  <div class="dropdown-menu"  aria-labelledby="addbook">
+
+    <div class="dropdown-item" >
+
+
+      <div class="card" style="width: 28rem;margin:auto;background: lightblue;margin-top: 1%;">
+       <!-- <img src="./login.png" class="card-img-top" alt="..."> -->
+       <div class="card-body center">
+         <form action="/books" method="post" >
+          <div class="mb-3">
+            <label for="title" class="form-label">Title Of Book</label>
+            <input type="text" class="form-control" name="title" id="title" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:title).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="yop" class="form-label">Year Of Publication</label>
+            <input type="date" class="form-control" name="year_publication" id="yop" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:yop).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" name="price" id="price" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:email).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="isbn" class="form-label">ISBN Number</label>
+            <input type="text" class="form-control" name="isbn" id="isbn" required>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:email).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="outofprint" class="form-label">Out Of Print</label>
+            <select name="out_of_print" class="form-select" aria-label="Default select example" id="outofprint">
+              <option selected value="false">No</option>
+              <option value="false">Yes</option>
+
+            </select>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:phone).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="suplier" class="form-label">Suplier</label>
+            <select name="supplier_id" class="form-select" aria-label="Default select example" id="suplier">
+              <% supplier = Supplier.all
+                supplier.each do |sup|
+
+               %>
+              <option selected value="<%=sup.id%>"><%=sup.name%></option>
+             
+              <%end%>
+            </select>
+            <div class="form-text">
+              <% @book.errors.full_messages_for(:phone).each do |i|%>
+              <div><%=i%></div>
+              <%end%>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <select name= "author_id" class="form-select" aria-label="Default select example" id="author">
+              <%
+                author = Author.all;
+                author.each do |aut|
+            %>
+              <option value="<%=aut.id%>"><%=aut.name%></option>
+
+              <%end%>
+            </select>
+            <div class="form-text">
+
+            </div>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary " style="margin-left: 10rem">Submit</button><br>
+
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
