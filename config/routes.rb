@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   get "/customers/customers_details", to:"customers#customer_details" 
   get "/customers/login", to:"customers#login" 
 
-  resources :customers
+ 
 
 
   
   get "/admins/login", to:"admins#login" 
   post "/admins/adminLogin", to:"admins#adminLogin" 
+  resources :customers
   resources :admins
+  resources :books
+  resources :authors
+  resources :suppliers
 end

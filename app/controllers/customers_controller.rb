@@ -1,10 +1,7 @@
 class CustomersController < ApplicationController
 	
 	def index
-		if session[:customer_id] != nil
-		@customer = Customer.find(session[:customer_id])
-
-		end
+		
 	end
 
 	def login
@@ -25,7 +22,8 @@ class CustomersController < ApplicationController
 
 		elsif customer1.password == password
 			session[:customer_id] = customer1.id
-			redirect_to :action=>'index'
+			# redirect_to :action=>'index'
+			redirect_to :action=> 'index'
 		else
 			session[:message] = "customers not found"
 			
